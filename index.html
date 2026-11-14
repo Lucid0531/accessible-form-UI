@@ -5,9 +5,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessible Form UI</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- SEO Tags -->
+    <meta name="author" content="Reynaldo Ramnath">
+    <meta name="description" content="This is an accessible form UI where users can input their information. This is a roadmap.sh project">
+    <meta name="keywords" content="form UI, form, reynaldo, web development">
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="Reynaldo Ramnath's accessible form UI">
+    <meta property="og:description" content="A practice project of a simple form UI">
+    <meta property="og:url" content="http://127.0.0.1:5500/index.html">
   </head>
 
   <body>
-    
+    <main class="container">
+      <div class="form-container">
+        <header class="form-header">
+          <h1>Create Account</h1>
+          <p>Complete the form below to create your account.</p>
+        </header>
+
+        <form action="#" method="post">
+          <!-- Full Name -->
+           <div class="form-group">
+            <label for="fullname">Full Name</label>
+
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" autocomplete="name" aria-required="true" required>
+
+            <span class="error-message" id="fullname-error">
+              <!-- Error message will appear here -->
+            </span>
+           </div>
+          
+          <!-- Email -->
+           <div class="form-group">
+              <label for="email">Email Address</label>
+
+              <input type="email" id="email" name="email" placeholder="Enter your email address" autocomplete="email" aria-required="true" required>
+
+              <span class="error-message" id="email-error">
+                <!-- Error message will appear here -->
+              </span>
+           </div>
+
+          <!-- Password -->
+           <div class="form-group">
+              <label for="password">Password</label>
+
+              <div class="password-wrapper">
+                <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="new-password" aria-required="true" aria-describedby="password-error" required>
+
+                <button type="button" class="toggle-password" aria-label="Show password" aria-pressed="false">
+                  Show
+                </button>
+              </div>
+
+              <span class="error-message" id="password-error">
+                <!-- Error message will appear here -->
+              </span>
+           </div>
+
+          <!-- Confirm Password -->
+           <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" autocomplete="new-password" aria-required="true" required>
+
+              <span class="error-message" id="confirm-password-error">
+                <!-- Error message will appear here -->
+              </span>
+           </div>
+
+          <!-- Password Requirements -->
+           <section class="requirements">
+              <div class="progress-header">
+                <h2>Form Completeness</h2>
+                <span class="progress-percentage">0%</span>
+              </div>
+
+              <div class="progress-track" role="progressbar" aria-label="Form completeness" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-fill"></div>
+              </div>
+
+              <h3>Password Requirements</h3>
+
+              <ul class="checklist">
+                <li>
+                  <span class="check-icon" aria-hidden="true">✓</span>
+                  At least 8 characters
+                </li>
+
+                <li>
+                  <span class="check-icon" aria-hidden="true">✓</span>
+                  At least one uppercase letter
+                </li>
+
+                <li>
+                  <span class="check-icon" aria-hidden="true">✓</span>
+                  At least one lowercase letter
+                </li>
+
+                <li>
+                  <span class="check-icon" aria-hidden="true">✓</span>
+                  At least one number
+                </li>
+
+                <li>
+                  <span class="check-icon" aria-hidden="true">✓</span>
+                  At least one special character
+                </li>
+
+                <li>
+                  <span class="check-icon" aria-hidden="true">✓</span>
+                  Passwords match
+                </li>
+              </ul>
+           </section>
+
+           <!-- Submit Button -->
+            <button type="submit" class="submit-button">
+              Create Account
+            </button>
+
+            <p class="login-text">
+              Already have an account?
+              <a href="#">Log in</a>
+            </p>
+        </form>
+      </div>
+    </main>
   </body>
 </html>
